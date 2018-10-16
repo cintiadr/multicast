@@ -1,0 +1,19 @@
+version: "3"
+services:
+  multicast:
+    restart: "always"
+    image: ${MULTICAST_IMAGE:-multicast:local}
+    ports:
+      - 3944:3944
+    environment:
+      MDNS_HOSTNAME: ${MDNS_HOSTNAME:-test}
+      MONGO_USERNAME: ${DB_ROOT_USERNAME:-root}
+      MONGO_PWD: ${DB_ROOT_PWD:-password}
+      APP_ID: 1234ABCD
+      MONGO_HOST: mongodb
+      CONNECT_DEVICES: "false"
+    healthcheck:
+      test: ["CMD", "curl", "localhost:3944"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

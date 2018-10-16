@@ -77,10 +77,6 @@ sudo yum install gcc gcc-c++ avahi avahi-compat-libdns_sd avahi-compat-libdns_sd
 
 ### Setup
 
-If you don't already have access to a MongoDB server installation, follow the guide [here](https://docs.mongodb.com/manual/administration/install-community/).
-
-Grab the latest stable copy of Node/NPM from [here](https://nodejs.org/en/download/) or install it via [nvm](http://nvm.sh).
-
 In order to access the Chromecast API, you need to [register as a Cast developer](https://cast.google.com/publish/) (it costs $5).
 
 Once you've done this, log in to the [Cast Developer SDK Console](https://cast.google.com/u/1/publish/#/overview) and click **Add New Application**. Choose **Custom Receiver**, then name it `Multicast` and set the **Receiver Application URL** to `http://YOUR_LOCAL_IP:3944/landing`. Disable **Guest Mode** and then **Save**.
@@ -88,6 +84,15 @@ Once you've done this, log in to the [Cast Developer SDK Console](https://cast.g
 **NOTE:** Make sure to use your LAN IP here (192.168.1.xx or similar), not your WAN/external IP. This should resolve to your server only within your local network.
 
 You now need to register your Chromecast devices as developer devices. For each device, locate the Serial Number (located on the back of the device and on the box), click **Add New Device**, and enter the Serial Number and a brief Description. (**NOTE**: This may take up to 15 minutes to take effect. Go grab a cup of coffee and then head back.)
+
+You can install multicast using NPM, running docker or direct from the sources.
+
+### Using NPM
+
+If you don't already have access to a MongoDB server installation, follow the guide [here](https://docs.mongodb.com/manual/administration/install-community/).
+
+Grab the latest stable copy of Node/NPM from [here](https://nodejs.org/en/download/) or install it via [nvm](http://nvm.sh).
+
 
 Installation is a snap with NPM.
 
@@ -98,6 +103,14 @@ multicast start
 ```
 
 Head over to `http://YOUR_LOCAL_IP:3944/` in your browser to get started, then simply follow the [Usage](#usage) guide to get off the ground.
+
+### Docker
+
+Check [docker](Docker/README.md) docs for more information. 
+
+### Or from the source
+
+Follow the same instructions and install mongodb.
 
 For development, you can install locally via Github - clone this repository to your local machine, then head into the cloned directory and create a `.config` file for your setup.
 
@@ -248,7 +261,7 @@ Change the class applied to the body to the name of your channel layout (e.g. - 
 
 In `build/css/channel.css`, add rules to style each `iframe` in your layout, prefixing each with <code>body.<em>layout-name</em></code>, replacing *layout-name* with your layout name. Refer to the existing rules for inspiration.
 
-**NOTE**: Channel sections are currently limited to 4 per channel. To increase this, change `maxSectionCount` on `app/views/channel.pug`. 
+**NOTE**: Channel sections are currently limited to 4 per channel. To increase this, change `maxSectionCount` on `app/views/channel.pug`.
 
 **CSS Icon Design**
 

@@ -1,0 +1,8 @@
+node_modules
+.config
+.git
+screens
+docker/multicast/*.yaml
+README.md
+.prettierrc.yml
+.travis.yml
