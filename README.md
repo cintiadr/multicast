@@ -59,7 +59,19 @@ A Channel Takeover allows all receiver devices to be temporarily, indefinitely r
 
 ## Getting Started
 
-### Prerequisites
+### Setup
+
+In order to access the Chromecast API, you need to [register as a Cast developer](https://cast.google.com/publish/) (it costs $5).
+
+Once you've done this, log in to the [Cast Developer SDK Console](https://cast.google.com/u/1/publish/#/overview) and click **Add New Application**. Choose **Custom Receiver**, then name it `Multicast` and set the **Receiver Application URL** to `http://YOUR_LOCAL_IP:3944/landing`. Disable **Guest Mode** and then **Save**.
+
+**NOTE:** Make sure to use your LAN IP here (192.168.1.xx or similar), not your WAN/external IP. This should resolve to your server only within your local network.
+
+You now need to register your Chromecast devices as developer devices. For each device, locate the Serial Number (located on the back of the device and on the box), click **Add New Device**, and enter the Serial Number and a brief Description. (**NOTE**: This may take up to 15 minutes to take effect. Go grab a cup of coffee and then head back.)
+
+You can install multicast using NPM, running docker or direct from the sources.
+
+### Using node and NPM
 
 This project requires Node.js and NPM (bundled with Node), as well as a MongoDB server. Since Node is cross-platform, it should work on Windows, MacOS, and Linux.
 
@@ -75,19 +87,6 @@ sudo apt-get install build-essential libavahi-compat-libdnssd-dev
 sudo yum install gcc gcc-c++ avahi avahi-compat-libdns_sd avahi-compat-libdns_sd-devel nss_mdns
 ```
 
-### Setup
-
-In order to access the Chromecast API, you need to [register as a Cast developer](https://cast.google.com/publish/) (it costs $5).
-
-Once you've done this, log in to the [Cast Developer SDK Console](https://cast.google.com/u/1/publish/#/overview) and click **Add New Application**. Choose **Custom Receiver**, then name it `Multicast` and set the **Receiver Application URL** to `http://YOUR_LOCAL_IP:3944/landing`. Disable **Guest Mode** and then **Save**.
-
-**NOTE:** Make sure to use your LAN IP here (192.168.1.xx or similar), not your WAN/external IP. This should resolve to your server only within your local network.
-
-You now need to register your Chromecast devices as developer devices. For each device, locate the Serial Number (located on the back of the device and on the box), click **Add New Device**, and enter the Serial Number and a brief Description. (**NOTE**: This may take up to 15 minutes to take effect. Go grab a cup of coffee and then head back.)
-
-You can install multicast using NPM, running docker or direct from the sources.
-
-### Using NPM
 
 If you don't already have access to a MongoDB server installation, follow the guide [here](https://docs.mongodb.com/manual/administration/install-community/).
 
@@ -106,11 +105,11 @@ Head over to `http://YOUR_LOCAL_IP:3944/` in your browser to get started, then s
 
 ### Docker
 
-Check [docker](Docker/README.md) docs for more information. 
+Check [Docker docs](docker/README.md) for more information.
 
 ### Or from the source
 
-Follow the same instructions and install mongodb.
+Follow the same instructions and install mongodb and NPM requisites.
 
 For development, you can install locally via Github - clone this repository to your local machine, then head into the cloned directory and create a `.config` file for your setup.
 
