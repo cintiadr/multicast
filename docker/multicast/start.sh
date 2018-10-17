@@ -22,10 +22,5 @@ fi
 
 /wait-for-it.sh ${MONGO_HOST}:27017 --timeout=60 --strict -- echo "Mongodb is up"
 
-# Some logging
-echo
-echo 'Starting multicast server'
-echo "http://${MDNS_HOSTNAME}.local"
-
 sleep 3
-node . ${ARGS}
+node . "${ARGS}"

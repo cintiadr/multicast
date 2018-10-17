@@ -1,6 +1,5 @@
-## Docker
+## Running multicast by docker
 
-If you want to run mongodb and multicast with docker, make sure to install docker (and docker-compose if you are on Linux).
 
 We have multiple docker compose files inside `docker` folder:
 
@@ -10,7 +9,15 @@ We have multiple docker compose files inside `docker` folder:
 
 Make sure to always call the commands from repository root folder.
 
-Multicast image was based on <https://github.com/Jack12816/docker-mdns>. 
+Multicast image was based on <https://github.com/Jack12816/docker-mdns>.
+
+
+### Requirements
+
+Install docker (and docker-compose if you are on Linux).
+
+Copy `docker/multicast.env.template` to `docker/multicast.env` and modify to have the values you need. 
+
 
 ### Mongodb and mongoexpress
 

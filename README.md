@@ -59,7 +59,7 @@ A Channel Takeover allows all receiver devices to be temporarily, indefinitely r
 
 ## Getting Started
 
-### Setup
+### Setting up Chromecast API
 
 In order to access the Chromecast API, you need to [register as a Cast developer](https://cast.google.com/publish/) (it costs $5).
 
@@ -69,20 +69,22 @@ Once you've done this, log in to the [Cast Developer SDK Console](https://cast.g
 
 You now need to register your Chromecast devices as developer devices. For each device, locate the Serial Number (located on the back of the device and on the box), click **Add New Device**, and enter the Serial Number and a brief Description. (**NOTE**: This may take up to 15 minutes to take effect. Go grab a cup of coffee and then head back.)
 
+### Installing multicast
+
 You can install multicast using NPM, running docker or direct from the sources.
 
-### Using node and NPM
+#### Using NPM
 
 This project requires Node.js and NPM (bundled with Node), as well as a MongoDB server. Since Node is cross-platform, it should work on Windows, MacOS, and Linux.
 
 This project depends on [node_mdns](https://github.com/agnat/node_mdns), which in turn requires a mDNS stack. Follow the installation instructions [here](https://github.com/agnat/node_mdns#installation) for whichever platform you are on to install a mDNS stack. If you're on Linux, this is as simple as
 
-#### Debian/Ubuntu
+_Debian/Ubuntu_
 ```shell
 sudo apt-get install build-essential libavahi-compat-libdnssd-dev
 ```
 
-#### RedHat/Fedora/CentOS
+_RedHat/Fedora/CentOS_
 ```shell
 sudo yum install gcc gcc-c++ avahi avahi-compat-libdns_sd avahi-compat-libdns_sd-devel nss_mdns
 ```
@@ -103,11 +105,11 @@ multicast start
 
 Head over to `http://YOUR_LOCAL_IP:3944/` in your browser to get started, then simply follow the [Usage](#usage) guide to get off the ground.
 
-### Docker
+#### Docker
 
 Check [Docker docs](docker/README.md) for more information.
 
-### Or from the source
+#### From source
 
 Follow the same instructions and install mongodb and NPM requisites.
 
